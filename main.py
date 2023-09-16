@@ -1,9 +1,14 @@
 import math
 b = 0
-a = int(input("Введите первое число:"))
-z = str(input("Введите знак операции (+, -, *, /, **, sqrt, !, sin, cos, tan):"))
-if not (z == "sqrt" or z == "!" or z == "sin" or z == "cos" or z == "tan"):
-    b = int(input("Введите второе число:"))
+z = ""
+try:
+    a = int(input("Введите первое число:"))
+    z = str(input("Введите знак операции (+, -, *, /, **, sqrt, !, sin, cos, tan):"))
+
+    if not (z == "sqrt" or z == "!" or z == "sin" or z == "cos" or z == "tan"):
+        b = int(input("Введите второе число:"))
+except (ValueError):
+    print("НЕ ЧИСЛО")
 
 match z:
     case "+": print(a + b)
