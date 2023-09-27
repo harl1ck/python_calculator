@@ -59,7 +59,11 @@ match z:
         else:
             print(divide(a, b))
     case "**": print(pow(a, b))
-    case "sqrt": print(sqrt(a))
+    case "sqrt":
+        try:
+            print(sqrt(a))
+        except ValueError:
+            print("Число не подходит")
     case "!":
         try:
             print(factorial(a))
